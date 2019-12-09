@@ -1473,6 +1473,8 @@ fact to give a non-default value.
   collectd with the name of the exception and the message (default: `false`)
 * `conf_name` name of the file that will contain the python module configuration
   (default: `python-config.conf`)
+* `show_diff` is a Boolean that determines whether the diffs in the Python module
+  configuration will be displayed during a Puppet run.
 
  See [collectd-python documentation](https://collectd.org/documentation/manpages/collectd-python.5.shtml)
  for more details.

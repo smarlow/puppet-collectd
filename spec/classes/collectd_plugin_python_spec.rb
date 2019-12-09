@@ -305,6 +305,18 @@ describe 'collectd::plugin::python', type: :class do
         end
       end
 
+      context 'with show_diff => false' do
+        let :params do
+          {
+            show_diff: false,
+          }
+        end
+
+        it 'should set show_diff => false on concat' do
+          is_expected.to contain_concat("#{options[:plugin_conf_dir]}/python-config.conf").with(show_diff: false)
+        end
+      end
+
       context ':ensure => absent' do
         let(:title) { 'elasticsearch' }
         let :params do

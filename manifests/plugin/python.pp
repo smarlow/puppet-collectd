@@ -14,6 +14,7 @@ class collectd::plugin::python (
   Hash $modules        = {},
   $order               = '10',
   $conf_name           = 'python-config.conf',
+  Boolean $show_diff   = true,
 ) {
 
   include collectd
@@ -74,6 +75,7 @@ class collectd::plugin::python (
     group          => $collectd::config_group,
     notify         => Service[$collectd::service_name],
     ensure_newline => true,
+    show_diff      => $show_diff,
     require        => File['collectd.d'],
   }
 
